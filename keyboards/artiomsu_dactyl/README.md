@@ -185,6 +185,12 @@ cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km tes
 ```
 Otherwise whichever side is plugged into the pc will think its left of right depending on if you set `#define MASTER_RIGHT` or `#define MASTER_LEFT` 
 
+When updating qmk, builds might fail so you need to 
+```sh
+git submodule update --init --recursive
+make git-submodule
+```
+
 ## Testing
 To build the test firmware you can do.
 ```sh

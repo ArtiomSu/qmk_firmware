@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     43 LEDs pointing up, in a grid
 */
 #define RGBLED_NUM 109
+#define RGBLIGHT_LED_COUNT RGBLED_NUM // needed for new changes
 #define RGBLIGHT_SPLIT
 //#define RGBLED_SPLIT { 36, 36 }
 

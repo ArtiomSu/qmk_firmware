@@ -21,7 +21,8 @@ AUDIO_ENABLE = no           # Audio output
 SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = vendor
 
-PROGRAMMABLE_BUTTON_ENABLE = yes # for my obs rust program - keycodes for HID usage "Telephony Device Page" (0x0B), "Programmable button usage" (0x07)
+# if this is enabled for some reason mouse buttons won't work on macos, but mouse movement does. so there is that...
+PROGRAMMABLE_BUTTON_ENABLE = no # for my obs rust program - keycodes for HID usage "Telephony Device Page" (0x0B), "Programmable button usage" (0x07)
 
 # note to self, combos must be removed from SRC
 INTROSPECTION_KEYMAP_C = combos.c # if you are wondering wtf is this. see here https://github.com/qmk/qmk_firmware/issues/21137#issuecomment-1577898767
