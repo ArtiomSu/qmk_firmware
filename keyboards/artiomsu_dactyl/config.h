@@ -24,8 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     30 LEDs around the bottom of the board using 60/m led strip
     43 LEDs pointing up, in a grid
 */
-#define RGBLED_NUM 109
-#define RGBLIGHT_LED_COUNT RGBLED_NUM // needed for new changes
+#define RGBLIGHT_LED_COUNT 109
 #define RGBLIGHT_SPLIT
 //#define RGBLED_SPLIT { 36, 36 }
 
