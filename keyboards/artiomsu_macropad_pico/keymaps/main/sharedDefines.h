@@ -23,6 +23,7 @@ void write_char_to_buff(char c);
 extern bool rgb_timed_out;
 extern uint32_t rgb_timeout_counter;
 extern uint32_t rgb_time_out_index;
+extern bool keep_shortcuts_active;
 #define RGB_MAX_OPTIONS 4
 
 extern bool about_to_boot; // same functionality as QK_BOOT but fancier

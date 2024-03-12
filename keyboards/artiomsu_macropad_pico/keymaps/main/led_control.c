@@ -1,5 +1,6 @@
 #include "sharedDefines.h"
 
+bool keep_shortcuts_active = false;
 bool rgb_timed_out = false;
 uint32_t rgb_time_out_options[RGB_MAX_OPTIONS] = {30000, 60000, 300000, 600000};
 char rgb_time_out_options_dict[RGB_MAX_OPTIONS][4] = {"30s\0", "1m\0", "5m\0", "10m\0"};
@@ -95,6 +96,10 @@ bool oled_task_user(void) {
         case Layer_main:
             oled_write_led_status();
             oled_write_P(PSTR("\n"), false);
+            if(keep_shortcuts_active){
+                keep_shortcuts_active = false;
+                layer_move(Layer_shortcuts);
+            }
             break;
         case Layer_shortcuts:
             oled_write_led_shortcuts();

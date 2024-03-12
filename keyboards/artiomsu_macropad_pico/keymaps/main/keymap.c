@@ -91,7 +91,7 @@ bool encoder_update_user_Layer_shortcuts(uint8_t index, bool clockwise) {
     switch (index){
         case 0:
             if (clockwise) {    rgblight_mode_noeeprom(RGBLIGHT_MODE_SNAKE + 1);
-            } else {            }
+            } else {            keep_shortcuts_active = true;}
             break;
         case 1:
             if (clockwise) {    rgblight_increase_sat_noeeprom();
