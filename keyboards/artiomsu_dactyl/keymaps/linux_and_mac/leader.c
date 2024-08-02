@@ -18,7 +18,7 @@ void leader_end_user(void) {
       SEND_STRING("https://www.bing.com/images/search?q=");
     } else if
     (leader_sequence_two_keys(KC_T, KC_O)) {
-      SEND_STRING("10.0.0.69:19009" SS_TAP(X_ENTER) SS_DELAY(700) "pirate" SS_TAP(X_TAB));
+      SEND_STRING("10.0.0.42:19009" SS_TAP(X_ENTER) SS_DELAY(700) "pirate" SS_TAP(X_TAB));
     } else if
     (leader_sequence_one_key(KC_C)) {
       SEND_STRING("codebin ." SS_TAP(X_ENTER));
