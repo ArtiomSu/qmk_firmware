@@ -10,7 +10,7 @@ uint32_t rgb_timeout_counter = 0;
 
 
 uint16_t unlock_password_index = 0;
-bool password_bypass = false;
+bool password_bypass = true;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if(rgb_timed_out && unlock_password_index < UNLOCK_PASSWORD_LENGTH && !password_bypass){
