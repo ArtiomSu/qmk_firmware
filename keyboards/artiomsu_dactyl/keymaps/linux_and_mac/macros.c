@@ -13,14 +13,16 @@ uint16_t unlock_password_index = 0;
 bool password_bypass = false;
 bool dynamic_macro_recording = false;
 
-void dynamic_macro_record_start_user(int8_t direction){
+bool dynamic_macro_record_start_user(int8_t direction){
     dynamic_macro_recording = true;
     rgb_manage_macro_recording(dynamic_macro_recording);
+    return true;
 }
 
-void dynamic_macro_record_end_user(int8_t direction){
+bool dynamic_macro_record_end_user(int8_t direction){
     dynamic_macro_recording = false;
     rgb_manage_macro_recording(dynamic_macro_recording);
+    return true;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
