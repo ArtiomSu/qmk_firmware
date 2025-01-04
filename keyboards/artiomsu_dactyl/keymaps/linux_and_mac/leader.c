@@ -38,7 +38,20 @@ void leader_end_user(void) {
         password_bypass = false;
     } else if
     (leader_sequence_two_keys(KC_C, KC_O)) {
-      SEND_STRING("cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km linux_and_mac -bl uf2-split-right");
+      if(is_keyboard_left()){
+        SEND_STRING("cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km linux_and_mac -bl uf2-split-left");
+      }else{
+        SEND_STRING("cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km linux_and_mac -bl uf2-split-right");
+      }
+    //   #if defined(EE_HANDS)
+    //     #if defined(INIT_EE_HANDS_LEFT)
+    //         SEND_STRING("cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km linux_and_mac -bl uf2-split-left");
+    //     #else
+    //         SEND_STRING("cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km linux_and_mac -bl uf2-split-right");
+    //     #endif
+    //   #else
+    //     SEND_STRING("cd /temp/GIT/qmk_firmware && make clean && qmk flash -kb artiomsu_dactyl -km linux_and_mac -bl uf2-split-right");
+    //   #endif
     }
     leader_key_is_running = false;
     rgb_manage_leader(leader_key_is_running);
