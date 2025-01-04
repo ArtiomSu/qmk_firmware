@@ -83,7 +83,7 @@ const uint16_t PROGMEM combo_scroll_down[] = {KC_E, KC_R, COMBO_END};
 
 */
 
-combo_t key_combos[COMBO_COUNT] = {
+combo_t key_combos[] = {
     [COMBO_LEFT_SQUARE_BRACKET] = COMBO_ACTION(combo_left_square_bracket),
     [COMBO_RIGHT_SQUARE_BRACKET] = COMBO_ACTION(combo_right_square_bracket),
     [COMBO_LEFT_CURLY_BRACKET] = COMBO_ACTION(combo_left_curly_bracket),

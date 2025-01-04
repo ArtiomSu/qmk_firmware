@@ -1,23 +1,101 @@
 {
-    "keyboard_name": "Dactyl-Manuform (5x7)",
     "manufacturer": "Artiom",
-    "url": "",
+    "keyboard_name": "dactyl_manuform_5x7_pi_pico",
     "maintainer": "ArtiomSu",
+    "bootloader": "rp2040",
+    "processor": "RP2040",
+    "url": "https://github.com/ArtiomSu/qmk_firmware/tree/artiom_dactyl/keyboards/artiomsu_dactyl",
     "usb": {
         "vid": "0x444D",
         "pid": "0x3537",
-        "device_version": "0.0.1"
+        "device_version": "1.0.0"
     },
     "ws2812": {
-        "pin": "GP29"
+        "pin": "GP29",
+        "driver": "vendor"
     },
     "matrix_pins": {
         "cols": ["GP10", "GP19", "GP20", "GP18", "GP26", "GP27", "GP28"],
         "rows": ["GP4","GP5","GP6","GP7","GP8","GP9"]
     },
     "diode_direction": "COL2ROW",
-    "processor": "RP2040",
-    "bootloader": "rp2040",
+    "features": {
+        "bootmagic": false,
+        "mousekey": true,
+        "extrakey": false,
+        "console": false,
+        "command": false,
+        "nkro": false,
+        "backlight": false,
+        "combo": true,
+        "leader": true,
+        "dynamic_macro": true,
+        "os_detection": true,
+        "caps_word": true,
+        "rgblight": true,
+        "programmable_button": false,
+        "audio": false
+    },
+    "split": {
+        "enabled": true,
+        "serial": {
+            "driver": "vendor"
+        },
+        "transport": {
+            "watchdog": false,
+            "sync": {
+                "activity": true,
+                "detected_os": true,
+                "haptic": false,
+                "layer_state": true,
+                "indicators": true,
+                "matrix_state": true,
+                "modifiers": true,
+                "oled": false,
+                "st7565": false,
+                "wpm": false
+            }
+        }
+    },
+    "rgblight": {
+        "led_count": 109,
+        "split": true,
+        "driver": "ws2812",
+        "sleep": true,
+        "animations": {
+            "breathing": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "snake": true,
+            "knight": true,
+            "christmas": true,
+            "static_gradient": true,
+            "rgb_test": true,
+            "alternating": true,
+            "twinkle": true
+        },
+        "layers": {
+           "enabled": true,
+           "override_rgb": true,
+           "max": 16,
+           "blink": true
+        }
+    },
+    "combo": {
+        "count": 24,
+        "term": 30
+    },
+    "caps_word": {
+        "enabled": true,
+        "idle_timeout": 3000
+    },
+    "leader_key": {
+        "timing": true,
+        "timeout": 500
+    },
+    "build": {
+        "lto": true
+    },
     "layouts": {
         "LAYOUT_5x7": {
             "layout": [
