@@ -24,6 +24,7 @@
 #define Layer_gaming 6
 #define Layer_mouse 7
 #define Layer_nav 8
+#define Layer_track_ball 9
 
 // layer Colours since they are different from layers themselves now
 #define Layer_main_colour 0

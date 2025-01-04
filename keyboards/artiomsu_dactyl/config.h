@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define SPLIT_ACTIVITY_ENABLE // This synchronizes the activity timestamps between sides of the split keyboard, allowing for activity timeouts to occur.
 
 //#define MASTER_LEFT
-#define MASTER_RIGHT
+//#define MASTER_RIGHT
 
 
 // #define RGBLIGHT_EFFECT_ALTERNATING
