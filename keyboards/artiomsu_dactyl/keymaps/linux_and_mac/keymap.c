@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //# right hand ###################################################################################################################
         KC_EQUAL,               KC_6,               KC_7,               KC_8,               KC_9,           KC_0,                   LSFT(KC_ENTER),
         KC_F2,                  KC_Y,               KC_U,               KC_I,               KC_O,           KC_P,                   ST_MACRO_SSH,
-        KC_F4,                  KC_H,               KC_J,     LT(Layer_track_ball,KC_K),    KC_L,           KC_SEMICOLON,           KC_RALT,
+        KC_F4,                  KC_H,               KC_J,               KC_K,               KC_L,           KC_SEMICOLON,           KC_RALT,
                                 KC_N,               LSFT_T(KC_M),       KC_COMMA,           KC_DOT,         KC_SLASH,               KC_RCTL,
                                                                         LCTL(LSFT(KC_LGUI)),XXXXXXX,        QK_CAPS_WORD_TOGGLE,    QK_LEAD,
 
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //# right hand ###################################################################################################################
         KC_EQUAL,               KC_6,               KC_7,               KC_8,               KC_9,           KC_0,                   LSFT(KC_ENTER),
         KC_F2,                  KC_Y,               KC_U,               KC_I,               KC_O,           KC_P,                   ST_MACRO_SSH,
-        KC_F4,                  KC_H,               KC_J,     LT(Layer_track_ball,KC_K),    KC_L,           KC_SEMICOLON,           KC_RALT,
+        KC_F4,                  KC_H,               KC_J,               KC_K,               KC_L,           KC_SEMICOLON,           KC_RALT,
                                 KC_N,               LSFT_T(KC_M),       KC_COMMA,           KC_DOT,         KC_SLASH,               KC_RCTL,
                                                                         LCTL(LSFT(KC_LGUI)),XXXXXXX,        QK_CAPS_WORD_TOGGLE,    QK_LEAD,
 
