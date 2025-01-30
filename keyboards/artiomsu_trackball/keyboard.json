@@ -1,0 +1,14 @@
+{
+    "usb": {
+        "device_version": "1.0.0"
+    },
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "direct": [
+            ["GP15"]
+        ]
+    },
+    "build": {
+        "lto": true
+    }
+}
