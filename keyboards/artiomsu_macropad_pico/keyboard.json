@@ -1,23 +1,64 @@
 {
-    "keyboard_name": "MacroPad_ArtiomSu",
     "manufacturer": "Artiom",
-    "url": "",
+    "keyboard_name": "MacroPad_ArtiomSu",
     "maintainer": "ArtiomSu",
+    "bootloader": "rp2040",
+    "processor": "RP2040",
+    "url": "https://github.com/ArtiomSu/qmk_firmware/tree/artiomsu_macropad_pico/keyboards/artiomsu_macropad_pico",
     "usb": {
         "vid": "0x445D",
         "pid": "0x3538",
         "device_version": "0.0.1"
     },
+    "features": {
+        "bootmagic": false,
+        "mousekey": false,
+        "extrakey": true,
+        "console": false,
+        "command": false,
+        "nkro": false,
+        "rgblight": true,
+        "encoder": true,
+        "oled": true,
+        "leader": true,
+        "programmable_button": true,
+        "audio": false
+    },
+    "diode_direction": "COL2ROW",
     "ws2812": {
-        "pin": "GP28"
+        "pin": "GP28",
+        "driver": "vendor"
+    },
+    "rgblight": {
+        "led_count": 54,
+        "animations": {
+            "alternating": true,
+            "breathing": true,
+            "christmas": true,
+            "knight": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "rgb_test": true,
+            "snake": true,
+            "static_gradient": true,
+            "twinkle": true
+        }
+    },
+    "encoder": {
+        "rotary": [
+            {"pin_a": "GP17", "pin_b": "GP16", "resolution": 3},
+            {"pin_a": "GP8", "pin_b": "GP9", "resolution": 4},
+            {"pin_a": "GP4", "pin_b": "GP5", "resolution": 3},
+            {"pin_a": "GP0", "pin_b": "GP1", "resolution": 4}
+        ]
     },
     "matrix_pins": {
         "cols": ["GP6", "GP7", "GP10", "GP11"],
         "rows": ["GP26", "GP22", "GP21", "GP20", "GP19", "GP18"]
     },
-    "diode_direction": "COL2ROW",
-    "processor": "RP2040",
-    "bootloader": "rp2040",
+    "build": {
+        "lto": true
+    },
     "layouts": {
         "LAYOUT_artiomsu_macropad": {
             "layout": [
