@@ -1,6 +1,32 @@
 {
+    "keyboard_name": "ArtiomSu Trackball",
+    "url": "https://github.com/ArtiomSu/qmk_firmware",
+    "maintainer": "ArtiomSu",
+    "manufacturer": "Artiom",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "usb": {
-        "device_version": "1.0.0"
+        "vid": "0x9000",
+        "pid": "0x9001",
+        "max_power": 100,
+        "device_version": "0.0.1"
+    },
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "pointing_device": true
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"matrix": [0, 0], "label":"Top Left Left", "x":0, "y":0, "h":2}
+            ]
+        }
+    },
+    "dynamic_keymap": {
+        "layer_count": 8
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {

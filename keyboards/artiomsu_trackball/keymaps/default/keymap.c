@@ -1,6 +1,8 @@
 #include QMK_KEYBOARD_H
 #include "quantum.h"
 
+// make clean && qmk flash -kb artiomsu_trackball -km default
+
 #define Layer_main 0
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
