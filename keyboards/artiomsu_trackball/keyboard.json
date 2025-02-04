@@ -16,7 +16,8 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "pointing_device": true
+        "pointing_device": true,
+        "raw": true
     },
     "layouts": {
         "LAYOUT": {

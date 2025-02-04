@@ -12,3 +12,6 @@
 #define SPI_SCK_PIN GP2
 #define SPI_MISO_PIN GP0
 #define SPI_MOSI_PIN GP7
+
+#define RAW_USAGE_PAGE 0xFF60
+#define RAW_USAGE_ID 0x61
