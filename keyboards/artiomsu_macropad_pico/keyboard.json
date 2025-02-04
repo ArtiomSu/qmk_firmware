@@ -22,7 +22,8 @@
         "oled": true,
         "leader": true,
         "programmable_button": true,
-        "audio": false
+        "audio": false,
+        "raw": true
     },
     "diode_direction": "COL2ROW",
     "ws2812": {
