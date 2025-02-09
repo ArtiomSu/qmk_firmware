@@ -5,6 +5,7 @@
 //#include "version.h"
 #include "secrets.h"
 #include "os_detection.h"
+#include "raw_hid_client.h"
 
 #define bool _Bool
 #define true 1
@@ -68,7 +69,16 @@ enum custom_keycodes {
   ST_M_password_bypass,
   ST_M_rgb_snake,
   ST_M_rgb_twinkle,
-  ST_M_rgb_knight
+  ST_M_rgb_knight,
+  RAW_HID_M_1,
+  RAW_HID_TB_DPI_UP,
+  RAW_HID_TB_DPI_DOWN,
+  RAW_HID_TB_DPI_DEFAULT,
+  RAW_HID_TB_SCROLL_UP,
+  RAW_HID_TB_SCROLL_DOWN,
+  RAW_HID_TB_SCROLL_DEFAULT,
+  RAW_HID_TB_SCROLL_INVERT,
+  RAW_HID_TB_DRAG_SCROLL
 };
 
 extern bool rgb_show;

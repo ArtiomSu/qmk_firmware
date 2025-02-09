@@ -59,3 +59,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #define RGBLIGHT_EFFECT_SNAKE_LENGTH 8
+
+#define RAW_USAGE_PAGE 0xFF60
+#define RAW_USAGE_ID 0x61

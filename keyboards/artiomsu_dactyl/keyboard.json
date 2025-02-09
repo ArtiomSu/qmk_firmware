@@ -34,7 +34,8 @@
         "caps_word": true,
         "rgblight": true,
         "programmable_button": false,
-        "audio": false
+        "audio": false,
+        "raw": true
     },
     "split": {
         "enabled": true,

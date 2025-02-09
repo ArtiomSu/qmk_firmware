@@ -28,4 +28,4 @@
 INTROSPECTION_KEYMAP_C = combos.c # if you are wondering wtf is this. see here https://github.com/qmk/qmk_firmware/issues/21137#issuecomment-1577898767
 
 #SRC+= secrets.c combos.c leader.c macros.c rgb_led_control.c
-SRC+= secrets.c leader.c macros.c rgb_led_control.c
+SRC+= secrets.c leader.c macros.c rgb_led_control.c raw_hid_client.c
