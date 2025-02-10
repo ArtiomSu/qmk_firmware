@@ -6,9 +6,9 @@
     "processor": "RP2040",
     "url": "https://github.com/ArtiomSu/qmk_firmware/tree/artiom_dactyl/keyboards/artiomsu_dactyl",
     "usb": {
-        "vid": "0x444D",
-        "pid": "0x3537",
-        "device_version": "1.0.0"
+        "vid": "0xA340",
+        "pid": "0xF00D",
+        "device_version": "0.0.1"
     },
     "ws2812": {
         "pin": "GP29",
