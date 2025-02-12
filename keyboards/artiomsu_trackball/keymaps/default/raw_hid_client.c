@@ -4,6 +4,7 @@
 //struct raw_hid_client trackball = {0x9000, 0x9001};
 
 struct raw_hid_client pc = {0x0000, 0x0000};
+//struct raw_hid_client broadcast = {0xffff, 0xffff};
 
 void raw_hid_receive(uint8_t *data, uint8_t length) {
     if(length != RAW_EPSIZE){
@@ -12,12 +13,21 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
     struct hid_packet *packet = (struct hid_packet *)data;
 
     if(packet->header != HID_PACKET_HEADER){
+        char c[8];
+        SEND_STRING("header is bad for trackball ");
+        snprintf(c, sizeof(c), "%X ", packet->header);
+        SEND_STRING(c);
+
+        for (int i = 0; i < length; i++){
+            snprintf(c, sizeof(c), "%02X", data[i]);
+            SEND_STRING(c);
+        }
         return;
     }
 
     switch (packet->operation){
         case HID_RAW_OP_SIMPLE_KEY_2:
-            SEND_STRING("received data");
+            SEND_STRING("received data at trackball");
         break;
         case HID_RAW_CUSTOM_KEY:
             switch (packet->payload[0])

@@ -8,7 +8,7 @@
 #include QMK_KEYBOARD_H
 
 
-#define HID_PACKET_PAYLOAD_LEN 24
+#define HID_PACKET_PAYLOAD_LEN 23
 #define HID_PACKET_HEADER 0xfeed
 struct hid_packet
 {
@@ -39,7 +39,7 @@ struct raw_hid_client
 	uint16_t pid;
 };
 
-extern struct raw_hid_client trackball;
+//extern struct raw_hid_client trackball;
 extern struct raw_hid_client pc;
 
 void simple_hid_test_send_key(struct raw_hid_client *client, uint8_t key);
