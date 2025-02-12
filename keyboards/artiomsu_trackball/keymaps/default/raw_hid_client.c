@@ -11,6 +11,7 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
         return;
     }
     struct hid_packet *packet = (struct hid_packet *)data;
+    char info[HID_PACKET_PAYLOAD_LEN];
 
     if(packet->header != HID_PACKET_HEADER){
         char c[8];
@@ -27,7 +28,13 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
 
     switch (packet->operation){
         case HID_RAW_OP_SIMPLE_KEY_2:
-            SEND_STRING("received data at trackball");
+            if(packet->to_pid == 0xffff && packet->to_vid == 0xffff){
+                snprintf(info, sizeof(info), "received broadcast");
+                raw_hid_send_info(&pc, info, sizeof(info));
+            }else{
+                snprintf(info, sizeof(info), "received data");
+                raw_hid_send_info(&pc, info, sizeof(info));
+            }
         break;
         case HID_RAW_CUSTOM_KEY:
             switch (packet->payload[0])
@@ -40,7 +47,6 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
             }
         break;
         case HID_RAW_SET_SETTING:
-            char info[HID_PACKET_PAYLOAD_LEN];
             switch (packet->payload[0])
             {
                 case HID_RAW_TB_S_DPI:
