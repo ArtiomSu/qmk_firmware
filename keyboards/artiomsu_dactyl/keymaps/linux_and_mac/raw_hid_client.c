@@ -2,6 +2,7 @@
                                     //vid, pid
 struct raw_hid_client trackball = {0x9000, 0x9001};
 struct raw_hid_client pc = {0x0000, 0x0000};
+struct raw_hid_client broadcast = {0xffff, 0xffff};
 
 void raw_hid_receive(uint8_t *data, uint8_t length) {
     if(length != RAW_EPSIZE){
@@ -12,7 +13,7 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
 
     if(packet->header != HID_PACKET_HEADER){
         char c[8];
-        SEND_STRING("header is bad ");
+        SEND_STRING("header is bad for dactyl ");
         snprintf(c, sizeof(c), "%X ", packet->header);
         SEND_STRING(c);
 
@@ -22,103 +23,21 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
         }
         return;
     }
-
+    char info[HID_PACKET_PAYLOAD_LEN];
     switch (packet->operation){
         case HID_RAW_OP_SIMPLE_KEY_2:
-            SEND_STRING("received data");
+            if(packet->to_pid == 0xffff && packet->to_vid == 0xffff){
+                snprintf(info, sizeof(info), "received broadcast");
+                raw_hid_send_info(&pc, info, sizeof(info));
+            }else{
+                snprintf(info, sizeof(info), "received data");
+                raw_hid_send_info(&pc, info, sizeof(info));
+            }
         break;
         default:
         break;
     }
 }
-
-#ifdef QMK_RAW_HID_EXAMPLE_FOR_TRACKBALL
-void raw_hid_receive(uint8_t *data, uint8_t length) {
-    if(length != RAW_EPSIZE){
-        return;
-    }
-    struct hid_packet *packet = (struct hid_packet *)data;
-
-    if(packet->header != HID_PACKET_HEADER){
-        return;
-    }
-
-    switch (packet->operation){
-        case HID_RAW_OP_SIMPLE_KEY_2:
-            SEND_STRING("received data");
-        break;
-        case HID_RAW_CUSTOM_KEY:
-            switch (packet->payload[0])
-            {
-                case 0x01:
-                    set_scrolling = packet->payload[1];
-                break;
-                default:
-                break;
-            }
-        break;
-        case HID_RAW_SET_SETTING:
-            char info[HID_PACKET_PAYLOAD_LEN];
-            switch (packet->payload[0])
-            {
-                case HID_RAW_TB_S_DPI:
-                    switch (packet->payload[1])
-                    {
-                        case 0x01:
-                            manageDPI(true);
-                            snprintf(info, sizeof(info), "DPI: %d", custom_dpi);
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        case 0x02:
-                            manageDPI(false);
-                            snprintf(info, sizeof(info), "DPI: %d", custom_dpi);
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        case 0x03:
-                            pointing_device_set_cpi(400);
-                            custom_dpi=400;
-                            snprintf(info, sizeof(info), "DPI: %d", custom_dpi);
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        default:
-                        break;
-                    }
-                break;
-                case HID_RAW_TB_S_SCROLL:
-                    switch (packet->payload[1])
-                    {
-                        case 0x01:
-                            manageScroll(true);
-                            snprintf(info, sizeof(info), "SCROLL SPEED: %f", scroll_divisor);
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        case 0x02:
-                            manageScroll(false);
-                            snprintf(info, sizeof(info), "SCROLL SPEED: %f", scroll_divisor);
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        case 0x03:
-                            scroll_divisor = scroll_divisor_default;
-                            snprintf(info, sizeof(info), "SCROLL SPEED: %f", scroll_divisor);
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        case 0x04:
-                            scroll_invert = !scroll_invert;
-                            snprintf(info, sizeof(info), "SCROLL INVERT: %s", scroll_invert ? "ON" : "OFF");
-                            raw_hid_send_info(&pc, info, sizeof(info));
-                        break;
-                        default:
-                        break;
-                    }
-                break;
-                default:
-                break;
-            }
-        default:
-        break;
-    }
-}
-#endif
 
 void raw_hid_send_to_router(struct raw_hid_client *client,
     uint8_t operation,

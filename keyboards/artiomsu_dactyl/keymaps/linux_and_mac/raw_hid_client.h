@@ -41,6 +41,7 @@ struct raw_hid_client
 
 extern struct raw_hid_client trackball;
 extern struct raw_hid_client pc;
+extern struct raw_hid_client broadcast;
 
 void simple_hid_test_send_key(struct raw_hid_client *client, uint8_t key);
 void raw_hid_set_setting(struct raw_hid_client *client, uint8_t setting, uint8_t data);
