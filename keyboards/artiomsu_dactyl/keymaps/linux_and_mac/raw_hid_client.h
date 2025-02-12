@@ -8,7 +8,7 @@
 #include QMK_KEYBOARD_H
 
 
-#define HID_PACKET_PAYLOAD_LEN 24
+#define HID_PACKET_PAYLOAD_LEN 23
 #define HID_PACKET_HEADER 0xfeed
 struct hid_packet
 {
