@@ -17,6 +17,7 @@
  */
 #include QMK_KEYBOARD_H
 #include "quantum.h"
+#include "sharedDefines.h"
 
 #define Layer_main 0
 #define Layer_settings_dpi 1
