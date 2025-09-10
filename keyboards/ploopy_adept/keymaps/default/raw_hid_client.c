@@ -47,9 +47,11 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
             {
                 case 0x01:
                     set_scrolling = packet->payload[1];
+                    set_scrolling_horizontal = false;
                 break;
                 case 0x02:
                     set_scrolling_horizontal = packet->payload[1];
+                    set_scrolling = false;
                 break;
                 default:
                 break;
