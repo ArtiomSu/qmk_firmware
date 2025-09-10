@@ -73,8 +73,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [Layer_symbols] = LAYOUT_5x7(
         // left hand
         LSFT(KC_GRAVE),     KC_F1,          KC_F2,              KC_F3,                      KC_F4,              KC_F5,              KC_F11,
-        KC_MS_BTN5,         KC_GRAVE,       KC_QUOTE,           LSFT(KC_QUOTE),             LSFT(LCTL(KC_C)),   LSFT(LCTL(KC_V)),   KC_CIRC,
-        KC_MS_BTN4,         KC_EXLM,        LSFT(KC_2),         LSFT(KC_3),                 KC_DLR,             KC_PERC,            KC_CIRC,
+        MS_BTN5,         KC_GRAVE,       KC_QUOTE,           LSFT(KC_QUOTE),             LSFT(LCTL(KC_C)),   LSFT(LCTL(KC_V)),   KC_CIRC,
+        MS_BTN4,         KC_EXLM,        LSFT(KC_2),         LSFT(KC_3),                 KC_DLR,             KC_PERC,            KC_CIRC,
         KC_LSFT,            ST_M_n_equal,   KC_AMPR,            LSFT(KC_NONUS_BACKSLASH),   LSFT(KC_NONUS_HASH),KC_ASTR,
         LALT(KC_LCTL),      ST_M_n_equal_2, LCTL(KC_X),         LCTL(KC_C),                 //LCTL(KC_V),
 
@@ -96,8 +96,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [Layer_mac_symbols] = LAYOUT_5x7(
         // left hand
         LSFT(KC_GRAVE),     KC_F1,          KC_F2,              KC_F3,                      KC_F4,              KC_F5,              KC_F11,
-        KC_MS_BTN5,         KC_GRAVE,       KC_QUOTE,           LSFT(KC_2),                 LGUI(LCTL(KC_C)),   LGUI(LCTL(KC_V)),   KC_CIRC,
-        KC_MS_BTN4,         KC_EXLM,        LSFT(KC_QUOTE),     LSFT(KC_3),                 KC_DLR,             KC_PERC,            KC_CIRC,
+        MS_BTN5,         KC_GRAVE,       KC_QUOTE,           LSFT(KC_2),                 LGUI(LCTL(KC_C)),   LGUI(LCTL(KC_V)),   KC_CIRC,
+        MS_BTN4,         KC_EXLM,        LSFT(KC_QUOTE),     LSFT(KC_3),                 KC_DLR,             KC_PERC,            KC_CIRC,
         KC_LSFT,            ST_M_n_equal,   KC_AMPR,            LSFT(KC_NONUS_HASH),        LSFT(KC_GRAVE),     KC_ASTR,
         LALT(KC_LCTL),      ST_M_n_equal_2, LGUI(KC_X),         LGUI(KC_C),                 //LGUI(KC_V),
 
@@ -170,19 +170,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    _______,    _______,            _______,        KC_NUM,     KC_CAPS,
         _______,    _______,    _______,            _______,
 
-        KC_MS_ACCEL0,KC_MS_ACCEL1,
-        KC_MS_ACCEL2,    _______,
+        MS_ACL0,MS_ACL1,
+        MS_ACL2,    _______,
         _______,         _______,
 
         //# right hand ###################################################################################################################
         _______,    _______,    _______,            _______,        _______,    _______,            ST_M_toggle_rgb,
         _______,    _______,    _______,            _______,        _______,    ST_M_mode_up,       ST_M_mode_down,
-        _______,    KC_MS_LEFT, KC_MS_DOWN,         KC_MS_UP,       KC_MS_RIGHT,ST_M_hue_up,        ST_M_hue_down,
+        _______,    MS_LEFT, MS_DOWN,         MS_UP,       MS_RGHT,ST_M_hue_up,        ST_M_hue_down,
                     _______,    _______,            _______,        _______,    ST_M_sat_up,        ST_M_sat_down,
                                                     _______,        _______,    ST_M_brightness_up, ST_M_brightness_down,
 
-        KC_MS_BTN2, KC_MS_BTN1,
-        _______,    KC_MS_BTN3,
+        MS_BTN2, MS_BTN1,
+        _______,    MS_BTN3,
         _______,    _______
     ),
     [Layer_nav] = LAYOUT_5x7(
@@ -212,22 +212,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         _______,    RAW_HID_M_1,    _______,            _______,    RAW_HID_TB_SCROLL_UP,    RAW_HID_TB_SCROLL_DOWN,  RAW_HID_TB_SCROLL_DEFAULT,
         _______,    _______,    _______,            _______,        RAW_HID_TB_SCROLL_INVERT,_______,                 RAW_HID_TB_DPI_DEFAULT,
-        _______,    KC_MS_BTN4, KC_MS_BTN5,         _______,        RAW_HID_TB_DRAG_SCROLL,  RAW_HID_TB_DPI_UP,       RAW_HID_TB_DPI_DOWN,
-        _______,RAW_HID_TB_D_S_1,_______,           _______,        KC_MS_BTN3,              _______,
+        _______,    MS_BTN4, MS_BTN5,         _______,        RAW_HID_TB_DRAG_SCROLL,  RAW_HID_TB_DPI_UP,       RAW_HID_TB_DPI_DOWN,
+        _______,RAW_HID_TB_D_S_1,_______,           _______,        MS_BTN3,              _______,
         _______,    _______,    _______,            _______,
 
-        KC_MS_BTN1, KC_MS_BTN2,
+        MS_BTN1, MS_BTN2,
         _______,    _______,
         _______,    _______,
 
         //# right hand ###################################################################################################################
         _______,    _______,    _______,            _______,        _______,       _______,            _______,
-        _______,    _______,    KC_MS_WH_UP,        _______,        _______,       _______,            _______,
-        _______,    _______,    KC_MS_BTN3,         _______,        KC_MS_BTN4,    KC_MS_BTN5,         _______,
-                    _______,    KC_MS_WH_DOWN,      _______,        _______,       _______,            _______,
+        _______,    _______,    MS_WHLU,        _______,        _______,       _______,            _______,
+        _______,    _______,    MS_BTN3,         _______,        MS_BTN4,    MS_BTN5,         _______,
+                    _______,    MS_WHLD,      _______,        _______,       _______,            _______,
                                                     _______,        _______,       _______,            _______,
 
-        KC_MS_BTN2, KC_MS_BTN1,
+        MS_BTN2, MS_BTN1,
         _______,    _______,
         _______,    _______
     )

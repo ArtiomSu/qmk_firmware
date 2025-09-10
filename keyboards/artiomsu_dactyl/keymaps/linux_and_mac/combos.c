@@ -202,10 +202,10 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         pressed ? register_code16(KC_NONUS_HASH) : unregister_code16(KC_NONUS_HASH);
     break;
     case COMBO_SCROLL_UP:
-        pressed ? register_code16(KC_MS_WH_UP) : unregister_code16(KC_MS_WH_UP);
+        pressed ? register_code16(MS_WHLU) : unregister_code16(MS_WHLU);
     break;
     case COMBO_SCROLL_DOWN:
-        pressed ? register_code16(KC_MS_WH_DOWN) : unregister_code16(KC_MS_WH_DOWN);
+        pressed ? register_code16(MS_WHLD) : unregister_code16(MS_WHLD);
     break;
     case COMBO_ALT_F4:
         if(pressed){
