@@ -192,6 +192,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RAW_HID_TB_DRAG_SCROLL:
             raw_hid_custom_key(&broadcast, 0x01, record->event.pressed);
         break;
+        case RAW_HID_TB_D_S_1:
+            raw_hid_custom_key(&broadcast, 0x02, record->event.pressed);
+        break;
         return false;
     }
     return true;

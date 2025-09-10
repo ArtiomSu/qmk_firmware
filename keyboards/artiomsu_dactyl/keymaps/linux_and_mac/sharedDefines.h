@@ -78,7 +78,8 @@ enum custom_keycodes {
   RAW_HID_TB_SCROLL_DOWN,
   RAW_HID_TB_SCROLL_DEFAULT,
   RAW_HID_TB_SCROLL_INVERT,
-  RAW_HID_TB_DRAG_SCROLL
+  RAW_HID_TB_DRAG_SCROLL,
+  RAW_HID_TB_D_S_1
 };
 
 extern bool rgb_show;

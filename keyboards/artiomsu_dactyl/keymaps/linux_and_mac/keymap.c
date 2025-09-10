@@ -213,7 +213,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    RAW_HID_M_1,    _______,            _______,    RAW_HID_TB_SCROLL_UP,    RAW_HID_TB_SCROLL_DOWN,  RAW_HID_TB_SCROLL_DEFAULT,
         _______,    _______,    _______,            _______,        RAW_HID_TB_SCROLL_INVERT,_______,                 RAW_HID_TB_DPI_DEFAULT,
         _______,    KC_MS_BTN4, KC_MS_BTN5,         _______,        RAW_HID_TB_DRAG_SCROLL,  RAW_HID_TB_DPI_UP,       RAW_HID_TB_DPI_DOWN,
-        _______,    _______,    _______,            _______,        KC_MS_BTN3,              _______,
+        _______,RAW_HID_TB_D_S_1,_______,           _______,        KC_MS_BTN3,              _______,
         _______,    _______,    _______,            _______,
 
         KC_MS_BTN1, KC_MS_BTN2,
