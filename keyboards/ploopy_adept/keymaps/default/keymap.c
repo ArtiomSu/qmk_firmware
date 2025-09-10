@@ -55,13 +55,13 @@ const bool scroll_invert_default = true;
 bool scroll_invert = scroll_invert_default;
 
 // this is just to make the keymap lool neeter.
-#define LT_SCROLL LT(Layer_settings_scroll, KC_BTN4)
-#define LT_DPI LT(Layer_settings_dpi, KC_BTN5)
+#define LT_SCROLL LT(Layer_settings_scroll, MS_BTN4)
+#define LT_DPI LT(Layer_settings_dpi, MS_BTN5)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [Layer_main] = LAYOUT(
-            LT_SCROLL,      LT_DPI,      DRAG_SCROLL,     KC_BTN2,
-            KC_BTN1,                                      KC_BTN3
+            LT_SCROLL,      LT_DPI,      DRAG_SCROLL,     MS_BTN2,
+            MS_BTN1,                                      MS_BTN3
     ),
     [Layer_settings_dpi] = LAYOUT(
             DPI_UP,         _______,     _______,         DPI_400,
