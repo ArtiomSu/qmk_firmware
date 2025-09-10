@@ -42,6 +42,7 @@ const uint16_t minimum_dpi = 200;
 const uint16_t max_dpi = 12000;
 
 bool set_scrolling = false;
+bool set_scrolling_horizontal = false;
 const float scroll_divisor_default = 5.0;
 float scroll_divisor = scroll_divisor_default;
 const float scroll_divisor_min = 1.0;
@@ -198,9 +199,9 @@ void keyboard_post_init_user(void) {
 // Function to handle mouse reports and perform drag scrolling
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     // Check if drag scrolling is active
-    if (set_scrolling) {
+    if (set_scrolling || set_scrolling_horizontal) {
         // Calculate and accumulate scroll values based on mouse movement and divisors
-        scroll_accumulated_h += (float)mouse_report.x / scroll_divisor;
+        scroll_accumulated_h += set_scrolling_horizontal ? 0 : ((float)mouse_report.x / scroll_divisor);
         scroll_accumulated_v += (float)mouse_report.y / scroll_divisor;
 
         // Assign integer parts of accumulated scroll values to the mouse report
